@@ -1,5 +1,14 @@
 # Volkov Labs App for Grafana
 
+## Errors & Solutions
+Error : 
+The docker image start failure with the error "grafana  | logger=provisioning t=2023-06-29T15:15:13.822709292Z level=error msg="Failed to provision plugins" error="app provisioning error: plugin not installed: \"volkovlabs-app\""
+grafana  | Error: ✗ app provisioning error: plugin not installed: "volkovlabs-app", how can i fix this.
+Solutions : 
+That's expected, Volkov Labs App is a part of the docker image we use for our projects. You can (select one of these below)
+1) Build `volkovlabs-app` plugin (`npm install` and `npm run build`) if you are interested to create your own application plugin
+2) Remove copy provisioning files and `dist` plugin folder from the Dockerfile.
+
 ![App](https://raw.githubusercontent.com/volkovlabs/volkovlabs-app/main/img/app.png)
 
 ![Grafana 10](https://img.shields.io/badge/Grafana-10.0.0-orange)
